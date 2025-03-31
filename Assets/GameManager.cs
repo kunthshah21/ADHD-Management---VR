@@ -31,6 +31,14 @@ public class GameManager : MonoBehaviour
 
         // Begin the countdown
         StartCoroutine(StartCountdown());
+
+        // After the countdown finishes
+        WomanSpawner womanSpawner = FindObjectOfType<WomanSpawner>();
+        if (womanSpawner != null)
+        {
+            StartCoroutine(womanSpawner.SpawnWomanRoutine());
+        }
+
     }
 
     private IEnumerator StartCountdown()
