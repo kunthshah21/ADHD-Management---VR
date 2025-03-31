@@ -16,7 +16,7 @@ public class WomanSpawner : MonoBehaviour
         StartCoroutine(SpawnWomanRoutine());
     }
 
-    private IEnumerator SpawnWomanRoutine()
+    public IEnumerator SpawnWomanRoutine()
     {
         // Wait for a random delay between 5 and 10 seconds
         float delay = Random.Range(5f, 10f);
