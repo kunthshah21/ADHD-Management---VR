@@ -10955,7 +10955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af2ccb2e830045218d90b1d9d009d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  womanPrefab: {fileID: 919132149155446097, guid: 37340bb1c263f48129ccbcd2596c3f33, type: 3}
+  womanPrefab: {fileID: 2756281734759490069, guid: c9a8cf0a2237e4e678da1885c22497b1, type: 3}
   spawnPoint: {fileID: 897008186}
   destinationPoint: {fileID: 1957163192}
 --- !u!1 &890618082
@@ -11217,7 +11217,7 @@ Transform:
   m_GameObject: {fileID: 897008185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.03, y: 0, z: -4.81}
+  m_LocalPosition: {x: 5.58, y: 0.84, z: -4.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13894,7 +13894,7 @@ Transform:
   m_GameObject: {fileID: 1093504477}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.85, y: 2.34, z: -3.54}
+  m_LocalPosition: {x: 1.824, y: 2.34, z: -4.164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
