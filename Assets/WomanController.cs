@@ -2,42 +2,32 @@ using UnityEngine;
 
 public class WomanController : MonoBehaviour
 {
-    // Public field to assign the destination in the inspector (or via another script)
-    public Transform destination;
-    public float speed = 1.5f; // Adjust this for desired walking speed
-
+    public float speed = 1.5f; // Walking speed
     private Animator animator;
+    private Renderer objectRenderer;
 
     private void Start()
     {
-        // Get the Animator component on the prefab
+        // Get the Animator component
         animator = GetComponent<Animator>();
-
-        // Start the walking animation.
-        // If using a boolean parameter:
         if (animator != null)
         {
-            animator.SetBool("isWalking", true);
+            animator.SetBool("isWalking", true); // Start walking animation
         }
-        // Alternatively, if your animator uses a trigger called "Walk":
-        // animator.SetTrigger("Walk");
+
+        // Get the Renderer component to check visibility
+        objectRenderer = GetComponentInChildren<Renderer>(); // Use InChildren in case mesh is nested
     }
 
     private void Update()
     {
-        // If a destination is set, move towards it
-        if (destination != null)
+        // Move forward in the direction the object is facing
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        
+        // Check if the object is still visible to any camera
+        if (objectRenderer != null && !objectRenderer.isVisible)
         {
-            // Move the woman toward the destination at the defined speed
-            transform.position = Vector3.MoveTowards(transform.position, destination.position, speed * Time.deltaTime);
-
-            // Optionally, you could rotate her to face the destination:
-            Vector3 direction = destination.position - transform.position;
-            if (direction != Vector3.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-            }
+            Destroy(gameObject);
         }
     }
 }
