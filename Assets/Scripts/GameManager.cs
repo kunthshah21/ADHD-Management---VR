@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartCountdown()
     {
+        countdownText.gameObject.SetActive(true);
+        countdownText.text = "Please Wait for Game to Start";
+        yield return new WaitForSeconds(7.5f);
+
         // Show "3"
         countdownText.gameObject.SetActive(true);
         countdownText.text = "3";
@@ -71,6 +75,34 @@ public class GameManager : MonoBehaviour
 
         // Show the guess panel
         guessPanel.SetActive(true);
+
+        //Post Game Printing
+        countdownText.gameObject.SetActive(true);
+        countdownText.text = "How many boxes did you count?";
+        yield return new WaitForSeconds(3f);
+
+        // Show "5"
+        countdownText.text = "Showing Answer In: 5";
+        yield return new WaitForSeconds(1f);
+
+        // Show "4"
+        countdownText.text = "Showing Answer In: 4";
+        yield return new WaitForSeconds(1f);
+
+        //Show "3"
+        countdownText.text = "Showing Answer In: 3";
+        yield return new WaitForSeconds(1f);
+
+        // Show "2"
+        countdownText.text = "Showing Answer In: 2";
+        yield return new WaitForSeconds(1f);
+
+        // Show "1"
+        countdownText.text = "Showing Answer In: 1";
+        yield return new WaitForSeconds(1f);
+
+        // Show "1"
+        countdownText.text = "Answer: " + BoxSpawner2D.totalBoxesSpawned.ToString();
     }
 
     // Called by the Submit button on the guess panel
